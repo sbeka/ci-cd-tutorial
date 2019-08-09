@@ -12,3 +12,12 @@ script:
 - ng lint
 - npm run test-headless
 - ng build --prod --base-href .
+
+deploy:
+  provider: heroku
+  app: "ci-cd-tutorial"
+  local_dir: dist/hello-world
+  api_key:
+    secure: "2d905155-e2bf-4286-9d14-93f1d074a67b"
+  on:
+    branch: master
