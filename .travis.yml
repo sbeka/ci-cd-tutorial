@@ -1,12 +1,15 @@
-sudo: false
-
 language: node_js
 node_js:
-  - 10.16.2
-
+  - "10.16.2"
+dist: trusty
+sudo: required
 branches:
   only:
-    - master
+  - master
+before_script:
+  - npm install -g @angular/cli
+script:
+- ng lint
     
 deploy:
   provider: heroku
